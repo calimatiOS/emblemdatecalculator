@@ -1,34 +1,31 @@
-//
-//  EmblemDateCalculatorTests.swift
-//  EmblemDateCalculatorTests
-//
-//  Created by Ricardo Herrera Petit on 2/16/20.
-//  Copyright © 2020 Ricardo Herrera Petit. All rights reserved.
-//
-
 import XCTest
-@testable import EmblemDateCalculator
+
+class EmblemDater {
+    func getEmblem(forDate date: Date?) throws {
+        if(date == nil) {
+            throw NSError(domain: "anyError", code: 0)
+        }
+      
+    }
+}
 
 class EmblemDateCalculatorTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_getCurrentEmblemForNilDate_throwsNilError() {
+        let sut = makeSUT()
+        XCTAssertThrowsError(try sut.getEmblem(forDate: nil))
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func test_getCurrentEmblemForValidDate_DoesNotThrowError() {
+        let sut = makeSUT()
+        let date = Date()
+        XCTAssertNoThrow(try sut.getEmblem(forDate: date))
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    // MARK: - Helpers
+    func makeSUT() -> EmblemDater {
+        return EmblemDater()
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+    
 
 }
