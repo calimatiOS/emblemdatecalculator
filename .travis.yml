@@ -1,4 +1,4 @@
 os: osx
-osx_image: xcode 11.2
+osx_image: xcode 11.3
 language: swift
 script: xcodebuild clean build test -project EmblemDateCalculator.xcodeproj -scheme "EmblemDateCalculator" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
