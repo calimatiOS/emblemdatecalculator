@@ -1,13 +1,5 @@
 import XCTest
-
-class EmblemDater {
-    func getEmblem(forDate date: Date?) throws {
-        if(date == nil) {
-            throw NSError(domain: "anyError", code: 0)
-        }
-      
-    }
-}
+import EmblemDateCalculator
 
 class EmblemDateCalculatorTests: XCTestCase {
 
@@ -21,6 +13,7 @@ class EmblemDateCalculatorTests: XCTestCase {
         let date = Date()
         XCTAssertNoThrow(try sut.getEmblem(forDate: date))
     }
+
     
     // MARK: - Helpers
     func makeSUT() -> EmblemDater {
