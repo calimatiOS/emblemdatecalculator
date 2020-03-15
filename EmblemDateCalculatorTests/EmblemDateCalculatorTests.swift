@@ -16,17 +16,8 @@ class EmblemDateCalculatorTests: XCTestCase {
     
     func test_getCurrentEmblem_WhenDateIs_Oct182019TZGMTMinus5At300() {
         let sut = makeSUT()
-        var dateComponents = DateComponents()
-        dateComponents.day = 18
-        dateComponents.month = 10
-        dateComponents.year = 2019
-        dateComponents.hour = 3
-        dateComponents.minute = 0
-        dateComponents.second = 0
-        dateComponents.timeZone = TimeZone(abbreviation: "BOT")
         
-        let calendar = Calendar.current
-        let date = calendar.date(from: dateComponents)
+        let date = sut.getDate()
         
         let emblem = try? sut.getEmblem(forDate: date)
         
@@ -37,17 +28,8 @@ class EmblemDateCalculatorTests: XCTestCase {
     
     func test_getCurrentEmblem_WhenDateIs_Oct212019TZGMTMinus5At300() {
         let sut = makeSUT()
-        var dateComponents = DateComponents()
-        dateComponents.day = 21
-        dateComponents.month = 10
-        dateComponents.year = 2019
-        dateComponents.hour = 3
-        dateComponents.minute = 0
-        dateComponents.second = 0
-        dateComponents.timeZone = TimeZone(abbreviation: "BOT")
-        
-        let calendar = Calendar.current
-        let date = calendar.date(from: dateComponents)
+       
+        let date = sut.getDate(forDay: 21)
         
         let emblem = try? sut.getEmblem(forDate: date)
         
