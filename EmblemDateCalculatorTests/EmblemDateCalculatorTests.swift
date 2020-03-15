@@ -14,24 +14,17 @@ class EmblemDateCalculatorTests: XCTestCase {
         XCTAssertNoThrow(try sut.getEmblem(forDate: date))
     }
     
-    func test_getCurrentEmblem_WhenDateIs_Oct182019TZGMTMinus5At300() {
-        let sut = makeSUT()
-        
-        let date = sut.getDate()
-        
-        let emblem = try? sut.getEmblem(forDate: date)
-        
+    func test_getCurrentEmblem_WhenDateIs_Oct182019TZGMTMinus5At300_ShouldReturnFighter() {
+        let emblem = makeSUT(forDay: 18)
+    
         XCTAssertNotNil(emblem)
         XCTAssertEqual(emblem, "Fighter")
         
     }
     
-    func test_getCurrentEmblem_WhenDateIs_Oct212019TZGMTMinus5At300() {
-        let sut = makeSUT()
-       
-        let date = sut.getDate(forDay: 21)
-        
-        let emblem = try? sut.getEmblem(forDate: date)
+    func test_getCurrentEmblem_WhenDateIs_Oct212019TZGMTMinus5At300_ShouldReturnSupport() {
+         let emblem = makeSUT(forDay: 21)
+          
         
         XCTAssertNotNil(emblem)
         XCTAssertEqual(emblem, "Support")
@@ -39,10 +32,7 @@ class EmblemDateCalculatorTests: XCTestCase {
 
     func test_getCurrentEmblem_WhenDateIs_Oct242019TZGMTMinus5At300_ShouldReturnMarksman() {
         
-        let sut = makeSUT()
-        let date = sut.getDate(forDay: 24)
-        
-        let emblem = try? sut.getEmblem(forDate: date)
+        let emblem = makeSUT(forDay: 24)
         
         XCTAssertNotNil(emblem)
         XCTAssertEqual(emblem, "Marksman")
@@ -52,6 +42,13 @@ class EmblemDateCalculatorTests: XCTestCase {
     // MARK: - Helpers
     func makeSUT() -> EmblemDater {
         return EmblemDater()
+    }
+    
+    func makeSUT (forDay day:Int? = 18) -> String? {
+        let sut = makeSUT()
+        let date = sut.getDate(forDay: day)
+        let emblem = try? sut.getEmblem(forDate: date)
+        return emblem
     }
     
 
