@@ -27,10 +27,14 @@ public class EmblemDater {
             throw NSError(domain: "anyError", code: 0)
         }
         
-        let baseDate = self.getDate()
+        let baseDate = self.getDate() // Day 18
+        let supportBaseDate = self.getDate(forDay: 21) //Day 21
         if(baseDate == date) {
             return "Fighter"
         }
-        return "Support"
+        if (supportBaseDate == date) {
+            return "Support"
+        }
+        return "Marksman"
     }
 }
