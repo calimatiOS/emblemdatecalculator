@@ -29,12 +29,16 @@ public class EmblemDater {
         
         let baseDate = self.getDate() // Day 18
         let supportBaseDate = self.getDate(forDay: 21) //Day 21
+        let marksmanBaseDate = self.getDate(forDay: 24) // Day 24
         if(baseDate == date) {
             return "Fighter"
         }
         if (supportBaseDate == date) {
             return "Support"
         }
-        return "Marksman"
+        if(marksmanBaseDate == date) {
+           return "Marksman"
+        }
+        return "Tank"
     }
 }
