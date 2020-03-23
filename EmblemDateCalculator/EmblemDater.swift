@@ -22,23 +22,27 @@ public class EmblemDater {
         return nil
     }
     
+    fileprivate func calculateEmblem(_ baseDate: Date?, _ date: Date?) -> String {
+        // Day 18
+        let emblems = ["Fighter", "Support", "Marksman", "Tank"]
+        let calendar = Calendar.current
+        var emblemIndex = 0
+        
+        for _ in emblems {
+            if(calendar.date(byAdding: .day, value: emblemIndex*3, to: baseDate!)  == date) {
+                       return emblems[emblemIndex]
+                   }
+            emblemIndex += 1
+        }
+        return ""
+    }
+    
     public func getEmblem(forDate date: Date?) throws -> String {
         if(date == nil) {
             throw NSError(domain: "anyError", code: 0)
         }
-        
-        let baseDate = self.getDate() // Day 18
-        let supportBaseDate = self.getDate(forDay: 21) //Day 21
-        let marksmanBaseDate = self.getDate(forDay: 24) // Day 24
-        if(baseDate == date) {
-            return "Fighter"
-        }
-        if (supportBaseDate == date) {
-            return "Support"
-        }
-        if(marksmanBaseDate == date) {
-           return "Marksman"
-        }
-        return "Tank"
+       
+        let baseDate = self.getDate()
+        return calculateEmblem(baseDate, date)
     }
 }
