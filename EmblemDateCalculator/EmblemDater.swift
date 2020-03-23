@@ -24,7 +24,7 @@ public class EmblemDater {
     
     fileprivate func calculateEmblem(_ baseDate: Date?, _ date: Date?) -> String {
         // Day 18
-        let emblems = ["Fighter", "Support", "Marksman", "Tank"]
+        let emblems = ["Fighter", "Support", "Marksman", "Tank", "Jungle"]
         let calendar = Calendar.current
         var emblemIndex = 0
         

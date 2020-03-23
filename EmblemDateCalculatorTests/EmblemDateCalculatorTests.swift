@@ -46,6 +46,13 @@ class EmblemDateCalculatorTests: XCTestCase {
         XCTAssertEqual(emblem, "Tank")
     }
     
+    func test_getCurrentEmblemWhenDateIs_Oct302019TZGMTMinus5At300_ShouldReturnJungle() {
+        let emblem = makeSUT(forDay: 30)
+        
+        XCTAssertNotNil(emblem)
+        XCTAssertEqual(emblem, "Jungle")
+    }
+    
     // MARK: - Helpers
     func makeSUT() -> EmblemDater {
         return EmblemDater()
