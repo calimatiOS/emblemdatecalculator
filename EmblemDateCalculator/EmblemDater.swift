@@ -4,10 +4,10 @@ public class EmblemDater {
      
     public init() { }
     
-    public func getDate(forDay day:Int? = 18) -> Date? {
+    public func getDate(forDay day:Int? = 18, andMonth month:Int? = 10) -> Date? {
         var dateComponents = DateComponents()
                       dateComponents.day = day
-                      dateComponents.month = 10
+                      dateComponents.month = month
                       dateComponents.year = 2019
                       dateComponents.hour = 3
                       dateComponents.minute = 0

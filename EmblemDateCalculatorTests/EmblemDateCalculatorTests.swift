@@ -53,14 +53,21 @@ class EmblemDateCalculatorTests: XCTestCase {
         XCTAssertEqual(emblem, Emblem.Jungle)
     }
     
+    func test_getCurrentEmblemWhenDateIs_Nov022019TZGMTMinus5At300_ShouldReturnAssassin() {
+        let emblem = makeSUT(forDay: 2, andMonth: 11)
+        
+        XCTAssertNotNil(emblem)
+        XCTAssertEqual(emblem, Emblem.Assassin)
+    }
+    
     // MARK: - Helpers
     func makeSUT() -> EmblemDater {
         return EmblemDater()
     }
     
-    func makeSUT (forDay day:Int? = 18) -> Emblem {
+    func makeSUT (forDay day:Int? = 18, andMonth month:Int? = 10) -> Emblem {
         let sut = makeSUT()
-        let date = sut.getDate(forDay: day)
+        let date = sut.getDate(forDay: day, andMonth: month)
         let emblem = try? sut.getEmblem(forDate: date)
         return emblem!
     }
