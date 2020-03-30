@@ -1,5 +1,13 @@
 import Foundation
 
+public enum Emblem : CaseIterable {
+    case Fighter
+    case Support
+    case Marksman
+    case Tank
+    case Jungle
+}
+
 public class EmblemDater {
      
     public init() { }
@@ -22,9 +30,8 @@ public class EmblemDater {
         return nil
     }
     
-    fileprivate func calculateEmblem(_ baseDate: Date?, _ date: Date?) -> String {
-        // Day 18
-        let emblems = ["Fighter", "Support", "Marksman", "Tank", "Jungle"]
+    fileprivate func calculateEmblem(_ baseDate: Date?, _ date: Date?) -> Emblem {
+        let emblems = Emblem.allCases
         let calendar = Calendar.current
         var emblemIndex = 0
         
@@ -34,10 +41,10 @@ public class EmblemDater {
                    }
             emblemIndex += 1
         }
-        return ""
+        return .Fighter
     }
     
-    public func getEmblem(forDate date: Date?) throws -> String {
+    public func getEmblem(forDate date: Date?) throws -> Emblem {
         if(date == nil) {
             throw NSError(domain: "anyError", code: 0)
         }
