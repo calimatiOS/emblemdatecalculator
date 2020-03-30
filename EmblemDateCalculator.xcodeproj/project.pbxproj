@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F632C16B24318A8B00847710 /* Emblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F632C16A24318A8B00847710 /* Emblem.swift */; };
 		F65E9E4223FA47CA00D476BA /* EmblemDateCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65E9E3823FA47CA00D476BA /* EmblemDateCalculator.framework */; };
 		F65E9E4723FA47CA00D476BA /* EmblemDateCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65E9E4623FA47CA00D476BA /* EmblemDateCalculatorTests.swift */; };
 		F65E9E4923FA47CA00D476BA /* EmblemDateCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = F65E9E3B23FA47CA00D476BA /* EmblemDateCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -24,6 +25,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F632C16A24318A8B00847710 /* Emblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emblem.swift; sourceTree = "<group>"; };
 		F65E9E3823FA47CA00D476BA /* EmblemDateCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EmblemDateCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F65E9E3B23FA47CA00D476BA /* EmblemDateCalculator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmblemDateCalculator.h; sourceTree = "<group>"; };
 		F65E9E3C23FA47CA00D476BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				F65E9E3B23FA47CA00D476BA /* EmblemDateCalculator.h */,
 				F65E9E3C23FA47CA00D476BA /* Info.plist */,
 				F6F0525D240C81EC001EDC0D /* EmblemDater.swift */,
+				F632C16A24318A8B00847710 /* Emblem.swift */,
 			);
 			path = EmblemDateCalculator;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6F0525E240C81EC001EDC0D /* EmblemDater.swift in Sources */,
+				F632C16B24318A8B00847710 /* Emblem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
