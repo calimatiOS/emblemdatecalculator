@@ -36,9 +36,9 @@ public class EmblemDater {
         return .Fighter
     }
     
-    public func getEmblem(forDate date: Date?) throws -> Emblem {
+    public func getEmblem(forDate date: Date?) -> Emblem {
         if(date == nil) {
-            throw NSError(domain: "anyError", code: 0)
+            return .Fighter
         }
        
         let baseDate = self.getDate()

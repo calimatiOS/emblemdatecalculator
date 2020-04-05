@@ -2,16 +2,22 @@ import XCTest
 import EmblemDateCalculator
 
 class EmblemDateCalculatorTests: XCTestCase {
-
-    func test_getCurrentEmblemForNilDate_throwsNilError() {
+    
+    func test_getCurrentEmblemForNilDate_DoesNotReturnNil() {
         let sut = makeSUT()
-        XCTAssertThrowsError(try sut.getEmblem(forDate: nil))
+        XCTAssertNotNil( sut.getEmblem(forDate: nil))
+    }
+    
+    func test_getCurrentEmblemForNilDate_ReturnsFighter() {
+        let sut = makeSUT()
+        XCTAssertEqual( sut.getEmblem(forDate: nil), Emblem.Fighter)
     }
     
     func test_getCurrentEmblemForValidDate_DoesNotThrowError() {
         let sut = makeSUT()
         let date = Date()
-        XCTAssertNoThrow(try sut.getEmblem(forDate: date))
+        XCTAssertNoThrow(sut.getEmblem(forDate: date))
+        XCTAssertNoThrow(sut.getEmblem(forDate: nil))
     }
     
     func test_getCurrentEmblem_WhenDateIs_Oct182019TZGMTMinus5At300_ShouldReturnFighter() {
@@ -76,8 +82,8 @@ class EmblemDateCalculatorTests: XCTestCase {
     func makeSUT (forDay day:Int? = 18, andMonth month:Int? = 10) -> Emblem {
         let sut = makeSUT()
         let date = sut.getDate(forDay: day, andMonth: month)
-        let emblem = try? sut.getEmblem(forDate: date)
-        return emblem!
+        let emblem =  sut.getEmblem(forDate: date)
+        return emblem
     }
     
 
