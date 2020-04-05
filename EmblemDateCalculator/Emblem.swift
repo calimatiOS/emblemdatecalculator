@@ -7,4 +7,5 @@ public enum Emblem : CaseIterable {
     case Tank
     case Jungle
     case Assassin
+    case Mage
 }

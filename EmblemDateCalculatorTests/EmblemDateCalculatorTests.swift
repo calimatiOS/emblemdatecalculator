@@ -60,6 +60,14 @@ class EmblemDateCalculatorTests: XCTestCase {
         XCTAssertEqual(emblem, Emblem.Assassin)
     }
     
+    func test_getCurrentEmblemWhenDateIs_Nov052019TZGMTMinus5At300_ShouldReturnMage() {
+        let emblem = makeSUT(forDay: 5, andMonth: 11)
+        
+        XCTAssertNotNil(emblem)
+        XCTAssertEqual(emblem, Emblem.Mage)
+
+    }
+    
     // MARK: - Helpers
     func makeSUT() -> EmblemDater {
         return EmblemDater()
