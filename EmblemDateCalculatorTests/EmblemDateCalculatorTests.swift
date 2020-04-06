@@ -3,21 +3,15 @@ import EmblemDateCalculator
 
 class EmblemDateCalculatorTests: XCTestCase {
     
-    func test_getCurrentEmblemForNilDate_DoesNotReturnNil() {
+    func test_getEmblemForDefaultDate_ShouldReturnFighter() {
         let sut = makeSUT()
-        XCTAssertNotNil( sut.getEmblem(forDate: nil))
-    }
-    
-    func test_getCurrentEmblemForNilDate_ReturnsFighter() {
-        let sut = makeSUT()
-        XCTAssertEqual( sut.getEmblem(forDate: nil), Emblem.Fighter)
+        XCTAssertEqual(sut.getEmblem(forDate: Date(timeIntervalSince1970: 0)), Emblem.Fighter)
     }
     
     func test_getCurrentEmblemForValidDate_DoesNotThrowError() {
         let sut = makeSUT()
         let date = Date()
         XCTAssertNoThrow(sut.getEmblem(forDate: date))
-        XCTAssertNoThrow(sut.getEmblem(forDate: nil))
     }
     
     func test_getCurrentEmblem_WhenDateIs_Oct182019TZGMTMinus5At300_ShouldReturnFighter() {
@@ -72,6 +66,12 @@ class EmblemDateCalculatorTests: XCTestCase {
         XCTAssertNotNil(emblem)
         XCTAssertEqual(emblem, Emblem.Mage)
 
+    }
+    
+    func test_getDate_returnsDefaultMinDateSince1970() {
+        let sut = makeSUT()
+        let date = sut.getDefaultDate()
+        XCTAssertEqual(date, Date(timeIntervalSince1970: 0))
     }
     
     // MARK: - Helpers
