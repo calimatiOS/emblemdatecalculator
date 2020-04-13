@@ -13,11 +13,11 @@ class EmblemDateCalculatorTests: XCTestCase {
         let date = Date()
         XCTAssertNoThrow(sut.getEmblem(forDate: date))
     }
+  
     
     func test_getCurrentEmblem_WhenDateIs_Oct182019TZGMTMinus5At300_ShouldReturnFighter() {
         let emblem = makeSUT(forDay: 18)
     
-        XCTAssertNotNil(emblem)
         XCTAssertEqual(emblem, Emblem.Fighter)
         
     }
@@ -25,8 +25,6 @@ class EmblemDateCalculatorTests: XCTestCase {
     func test_getCurrentEmblem_WhenDateIs_Oct212019TZGMTMinus5At300_ShouldReturnSupport() {
          let emblem = makeSUT(forDay: 21)
           
-        
-        XCTAssertNotNil(emblem)
         XCTAssertEqual(emblem, Emblem.Support)
     }
 
@@ -34,7 +32,6 @@ class EmblemDateCalculatorTests: XCTestCase {
         
         let emblem = makeSUT(forDay: 24)
         
-        XCTAssertNotNil(emblem)
         XCTAssertEqual(emblem, Emblem.Marksman)
         
     }
@@ -42,30 +39,25 @@ class EmblemDateCalculatorTests: XCTestCase {
     func test_getCurrentEmblem_WhendateIs_Oct272019TZGMTMinus5At300_ShouldReturnTank() {
         let emblem = makeSUT(forDay: 27)
         
-        XCTAssertNotNil(emblem)
         XCTAssertEqual(emblem, Emblem.Tank)
     }
     
     func test_getCurrentEmblemWhenDateIs_Oct302019TZGMTMinus5At300_ShouldReturnJungle() {
         let emblem = makeSUT(forDay: 30)
         
-        XCTAssertNotNil(emblem)
         XCTAssertEqual(emblem, Emblem.Jungle)
     }
     
     func test_getCurrentEmblemWhenDateIs_Nov022019TZGMTMinus5At300_ShouldReturnAssassin() {
         let emblem = makeSUT(forDay: 2, andMonth: 11)
         
-        XCTAssertNotNil(emblem)
         XCTAssertEqual(emblem, Emblem.Assassin)
     }
     
     func test_getCurrentEmblemWhenDateIs_Nov052019TZGMTMinus5At300_ShouldReturnMage() {
         let emblem = makeSUT(forDay: 5, andMonth: 11)
         
-        XCTAssertNotNil(emblem)
         XCTAssertEqual(emblem, Emblem.Mage)
-
     }
     
     func test_getDate_returnsDefaultMinDateSince1970() {
@@ -85,6 +77,5 @@ class EmblemDateCalculatorTests: XCTestCase {
         let emblem =  sut.getEmblem(forDate: date)
         return emblem
     }
-    
 
 }
