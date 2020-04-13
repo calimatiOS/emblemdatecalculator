@@ -22,11 +22,35 @@ class EmblemDateCalculatorTests: XCTestCase {
         
     }
     
+    
+    func test_getCurrentEmblem_WhenDateIs_Oct192019TZGMTMinus5At300_ShouldReturnFighter() {
+        let emblem = makeSUT(forDay: 19)
+    
+        XCTAssertEqual(emblem, Emblem.Fighter)
+        
+    }
+    
+    
+    func test_getCurrentEmblem_WhenDateIs_Oct202019TZGMTMinus5At300_ShouldReturnFighter() {
+        let emblem = makeSUT(forDay: 20)
+    
+        XCTAssertEqual(emblem, Emblem.Fighter)
+        
+    }
+    
+    
+    
     func test_getCurrentEmblem_WhenDateIs_Oct212019TZGMTMinus5At300_ShouldReturnSupport() {
          let emblem = makeSUT(forDay: 21)
           
         XCTAssertEqual(emblem, Emblem.Support)
     }
+    
+    func test_getCurrentEmblem_WhenDateIs_Oct222019TZGMTMinus5At300_ShouldReturnSupport() {
+            let emblem = makeSUT(forDay: 22)
+             
+           XCTAssertEqual(emblem, Emblem.Support)
+       }
 
     func test_getCurrentEmblem_WhenDateIs_Oct242019TZGMTMinus5At300_ShouldReturnMarksman() {
         
