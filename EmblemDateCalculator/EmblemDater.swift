@@ -39,12 +39,23 @@ public class EmblemDater {
         
         let supportDate = getDate(forDay: 22)
         let nextSupportDate = getDate(forDay: 23)
+        
+        let marksmanDate = getDate(forDay: 25)
+        let nextMarksManDate = getDate(forDay: 26)
         if supportDate == date {
             return .Support
         }
         
         if nextSupportDate == date {
             return .Support
+        }
+        
+        if marksmanDate == date {
+            return .Marksman
+        }
+        
+        if nextMarksManDate == date {
+            return .Marksman
         }
         
         return .Fighter
