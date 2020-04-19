@@ -27,6 +27,7 @@ public class EmblemDater {
     fileprivate func calculateEmblem(_ baseDate: Date, _ date: Date?) -> Emblem {
         let emblems = Emblem.allCases
         let calendar = Calendar.current
+
         var emblemIndex = 0
         
         for _ in emblems {
@@ -36,17 +37,13 @@ public class EmblemDater {
             emblemIndex += 1
         }
         
-        var dateComponents = DateComponents()
-                                 dateComponents.day = 22
-                                 dateComponents.month = 10
-                                 dateComponents.year = 2019
-                                 dateComponents.hour = 3
-                                 dateComponents.minute = 0
-                                 dateComponents.second = 0
-                                 dateComponents.timeZone = TimeZone(abbreviation: "BOT")
-                                 
-                                 let supportDate = calendar.date(from: dateComponents)
-        if(supportDate == date) {
+        let supportDate = getDate(forDay: 22)
+        let nextSupportDate = getDate(forDay: 23)
+        if supportDate == date {
+            return .Support
+        }
+        
+        if nextSupportDate == date {
             return .Support
         }
         
