@@ -27,36 +27,23 @@ public class EmblemDater {
     fileprivate func calculateEmblem(_ baseDate: Date, _ date: Date?) -> Emblem {
         let emblems = Emblem.allCases
         let calendar = Calendar.current
-
+        var calculatedDate = baseDate
+        
         var emblemIndex = 0
+        var days = 0
         
-        for _ in emblems {
-            if(calendar.date(byAdding: .day, value: emblemIndex*3, to: baseDate)  == date) {
-                       return emblems[emblemIndex]
-                   }
-            emblemIndex += 1
+        if let date = date {
+            while calculatedDate < date {
+                calculatedDate = calendar.date(byAdding: .day, value: 1, to: calculatedDate) ?? getDefaultDate()
+                days += 1
+                if days != 0 && days % 3 == 0 {
+                    emblemIndex = (emblemIndex + 1) % emblems.count
+                }
+            
+            }
+            return emblems[emblemIndex]
         }
         
-        let supportDate = getDate(forDay: 22)
-        let nextSupportDate = getDate(forDay: 23)
-        
-        let marksmanDate = getDate(forDay: 25)
-        let nextMarksManDate = getDate(forDay: 26)
-        if supportDate == date {
-            return .Support
-        }
-        
-        if nextSupportDate == date {
-            return .Support
-        }
-        
-        if marksmanDate == date {
-            return .Marksman
-        }
-        
-        if nextMarksManDate == date {
-            return .Marksman
-        }
         
         return .Fighter
     }
