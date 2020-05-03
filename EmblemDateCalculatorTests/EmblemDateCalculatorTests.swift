@@ -38,8 +38,6 @@ class EmblemDateCalculatorTests: XCTestCase {
         
     }
     
-    
-    
     func test_getCurrentEmblem_WhenDateIs_Oct212019TZGMTMinus5At300_ShouldReturnSupport() {
          let emblem = makeSUT(forDay: 21)
           
@@ -51,12 +49,14 @@ class EmblemDateCalculatorTests: XCTestCase {
            XCTAssertEqual(emblem, Emblem.Support)
        }
 
+    
+    
     func test_getCurrentEmblem_WhenDateIs_Oct232019TZGMTMinus5At300_ShouldReturnSupport() {
             let emblem = makeSUT(forDay: 23)
            XCTAssertEqual(emblem, Emblem.Support)
        }
 
-
+    
     func test_getCurrentEmblem_WhenDateIs_Oct242019TZGMTMinus5At300_ShouldReturnMarksman() {
         
         let emblem = makeSUT(forDay: 24)
@@ -64,6 +64,7 @@ class EmblemDateCalculatorTests: XCTestCase {
         XCTAssertEqual(emblem, Emblem.Marksman)
         
     }
+    
     
     func test_getCurrentEmblem_WhenDateIs_Oct252019TZGMTMinus5At300_ShouldReturnMarksman() {
         
@@ -88,11 +89,38 @@ class EmblemDateCalculatorTests: XCTestCase {
         XCTAssertEqual(emblem, Emblem.Tank)
     }
     
+    func test_getCurrentEmblem_WhendateIs_Oct282019TZGMTMinus5At300_ShouldReturnTank() {
+           let emblem = makeSUT(forDay: 28)
+           
+           XCTAssertEqual(emblem, Emblem.Tank)
+       }
+    
+    func test_getCurrentEmblem_WhendateIs_Oct292019TZGMTMinus5At300_ShouldReturnTank() {
+             let emblem = makeSUT(forDay: 29)
+             
+             XCTAssertEqual(emblem, Emblem.Tank)
+         }
+    
+    
     func test_getCurrentEmblemWhenDateIs_Oct302019TZGMTMinus5At300_ShouldReturnJungle() {
         let emblem = makeSUT(forDay: 30)
         
         XCTAssertEqual(emblem, Emblem.Jungle)
     }
+    
+    
+    func test_getCurrentEmblemWhenDateIs_Oct312019TZGMTMinus5At300_ShouldReturnJungle() {
+        let emblem = makeSUT(forDay: 31)
+        
+        XCTAssertEqual(emblem, Emblem.Jungle)
+    }
+    
+    func test_getCurrentEmblemWhenDateIs_Nov012019TZGMTMinus5At300_ShouldReturnJungle() {
+           let emblem = makeSUT(forDay: 1, andMonth: 11)
+           
+        XCTAssertEqual(emblem, Emblem.Jungle)
+       }
+    
     
     func test_getCurrentEmblemWhenDateIs_Nov022019TZGMTMinus5At300_ShouldReturnAssassin() {
         let emblem = makeSUT(forDay: 2, andMonth: 11)
@@ -100,11 +128,60 @@ class EmblemDateCalculatorTests: XCTestCase {
         XCTAssertEqual(emblem, Emblem.Assassin)
     }
     
+    func test_getCurrentEmblemWhenDateIs_Nov032019TZGMTMinus5At300_ShouldReturnAssassin() {
+           let emblem = makeSUT(forDay: 3, andMonth: 11)
+           
+           XCTAssertEqual(emblem, Emblem.Assassin)
+       }
+    
+    func test_getCurrentEmblemWhenDateIs_Nov042019TZGMTMinus5At300_ShouldReturnAssassin() {
+             let emblem = makeSUT(forDay: 4, andMonth: 11)
+             
+             XCTAssertEqual(emblem, Emblem.Assassin)
+         }
+    
     func test_getCurrentEmblemWhenDateIs_Nov052019TZGMTMinus5At300_ShouldReturnMage() {
         let emblem = makeSUT(forDay: 5, andMonth: 11)
         
         XCTAssertEqual(emblem, Emblem.Mage)
     }
+    
+    func test_getCurrentEmblemWhenDateIs_Nov062019TZGMTMinus5At300_ShouldReturnMage() {
+           let emblem = makeSUT(forDay: 6, andMonth: 11)
+           
+           XCTAssertEqual(emblem, Emblem.Mage)
+       }
+    
+    func test_getCurrentEmblemWhenDateIs_Nov072019TZGMTMinus5At300_ShouldReturnMage() {
+             let emblem = makeSUT(forDay: 7, andMonth: 11)
+             
+             XCTAssertEqual(emblem, Emblem.Mage)
+         }
+    
+    func test_getCurrentEmblemWhenDateIs_Nov082019TZGMTMinus5At300_ShouldReturnFighter() {
+                let emblem = makeSUT(forDay: 8, andMonth: 11)
+                
+        XCTAssertEqual(emblem, Emblem.Fighter)
+    }
+         
+    
+    func test_getCurrentEmblemWhenDateIs_Nov092019TZGMTMinus5At300_ShouldReturnFighter() {
+                  let emblem = makeSUT(forDay: 9, andMonth: 11)
+                  
+          XCTAssertEqual(emblem, Emblem.Fighter)
+      }
+    
+    func test_getCurrentEmblemWhenDateIs_Nov102019TZGMTMinus5At300_ShouldReturnFighter() {
+                     let emblem = makeSUT(forDay: 10, andMonth: 11)
+                     
+             XCTAssertEqual(emblem, Emblem.Fighter)
+    }
+    
+    func test_getCurrentEmblemWhenDateIs_Nov112019TZGMTMinus5At300_ShouldReturnFighter() {
+                        let emblem = makeSUT(forDay: 11, andMonth: 11)
+                        
+        XCTAssertEqual(emblem, Emblem.Support)
+       }
     
     func test_getDate_returnsDefaultMinDateSince1970() {
         let sut = makeSUT()
