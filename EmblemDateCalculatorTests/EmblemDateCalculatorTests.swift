@@ -183,6 +183,19 @@ class EmblemDateCalculatorTests: XCTestCase {
         XCTAssertEqual(emblem, Emblem.Support)
        }
     
+    func test_getCurrentEmblemWhenDateIs_May032020TZGMTMinus5At300_ShouldReturnFighter() {
+                          let emblem = makeSUT(forDay: 3, andMonth: 5, andYear: 2020)
+                          
+        XCTAssertEqual(emblem, Emblem.Tank)
+    }
+    
+    func test_getCurrentEmblemWhenDateIs_May032020TZGMTMinus5At2042_ShouldReturnFighter() {
+                          let emblem = makeSUT(forDay: 3, andMonth: 5, andYear: 2020, andHour: 8 , andMinute: 42)
+
+        XCTAssertEqual(emblem, Emblem.Tank)
+    }
+
+    
     func test_getDate_returnsDefaultMinDateSince1970() {
         let sut = makeSUT()
         let date = sut.getDefaultDate()
@@ -194,9 +207,9 @@ class EmblemDateCalculatorTests: XCTestCase {
         return EmblemDater()
     }
     
-    func makeSUT (forDay day:Int? = 18, andMonth month:Int? = 10) -> Emblem {
+    func makeSUT (forDay day:Int? = 18, andMonth month:Int? = 10, andYear year:Int? = 2019, andHour hour:Int? = 3, andMinute minute:Int? = 0) -> Emblem {
         let sut = makeSUT()
-        let date = sut.getDate(forDay: day, andMonth: month)
+        let date = sut.getDate(forDay: day, andMonth: month, andYear: year, andHour: hour, andMinute: minute)
         let emblem =  sut.getEmblem(forDate: date)
         return emblem
     }
