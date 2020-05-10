@@ -12,7 +12,7 @@ class NextEmblemDateCalculatorUseCase: XCTestCase {
         let expectedDateEmblem = sut.getDate(forDay: 21, andMonth: 10, andYear: 2019)
         
         //Act
-        let resultEmblemDate = sut.getNextAvailableDate(for: currentDate, andEmblem: emblemToBeCalculated)
+        let resultEmblemDate = sut.getNextAvailableDate(for: emblemToBeCalculated, inCurrentDate: currentDate)
         
         //Assert
         XCTAssertEqual(expectedDateEmblem, resultEmblemDate)
@@ -28,7 +28,7 @@ class NextEmblemDateCalculatorUseCase: XCTestCase {
            let expectedDateEmblem = sut.getDate(forDay: 24, andMonth: 10, andYear: 2019)
            
            //Act
-           let resultEmblemDate = sut.getNextAvailableDate(for: currentDate, andEmblem: emblemToBeCalculated)
+           let resultEmblemDate = sut.getNextAvailableDate(for: emblemToBeCalculated, inCurrentDate: currentDate)
            
            //Assert
            XCTAssertEqual(expectedDateEmblem, resultEmblemDate)

@@ -8,7 +8,7 @@ public class EmblemDater {
         return Date(timeIntervalSince1970: 0)
     }
     
-    public func getNextAvailableDate(for currentDate:Date, andEmblem emblem:Emblem) -> Date {
+    public func getNextAvailableDate(for emblem:Emblem, inCurrentDate date:Date) -> Date {
         if(emblem == .Support) {
            return getDate(forDay: 21, andMonth: 10, andYear: 2019 )
         }
