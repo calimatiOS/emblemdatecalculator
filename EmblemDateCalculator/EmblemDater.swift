@@ -8,15 +8,15 @@ public class EmblemDater {
         return Date(timeIntervalSince1970: 0)
     }
     
-    public func getDate(forDay day:Int? = 18, andMonth month:Int? = 10, andYear year:Int? = 2019, andHour hour:Int? = 3, andMinute minute:Int? = 0) -> Date {
+    public func getDate(forDay day:Int? = 18, andMonth month:Int? = 10, andYear year:Int? = 2019, andHour hour:Int? = 3, andMinute minute:Int? = 0, andSeconds seconds:Int? = 0, inTimezone timezone:TimeZone = TimeZone(abbreviation: "BOT") ?? TimeZone.current) -> Date {
         var dateComponents = DateComponents()
                       dateComponents.day = day
                       dateComponents.month = month
                       dateComponents.year = year
                       dateComponents.hour = hour
                       dateComponents.minute = minute
-                      dateComponents.second = 0
-                      dateComponents.timeZone = TimeZone(abbreviation: "BOT")
+                      dateComponents.second = seconds
+                      dateComponents.timeZone = timezone
                       
                       let calendar = Calendar.current
                       let baseDate = calendar.date(from: dateComponents)

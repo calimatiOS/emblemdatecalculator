@@ -189,13 +189,19 @@ class EmblemDateCalculatorTests: XCTestCase {
         XCTAssertEqual(emblem, Emblem.Tank)
     }
     
-    func test_getCurrentEmblemWhenDateIs_May032020TZGMTMinus5At2042_ShouldReturnFighter() {
-                          let emblem = makeSUT(forDay: 3, andMonth: 5, andYear: 2020, andHour: 8 , andMinute: 42)
+    func test_getCurrentEmblemWhenDateIs_May032020TZGMTMinus5At2042_ShouldReturnTank() {
+                          let emblem = makeSUT(forDay: 3, andMonth: 5, andYear: 2020, andHour: 20 , andMinute: 42)
 
         XCTAssertEqual(emblem, Emblem.Tank)
     }
 
-    
+    func test_getCurrentEmblemWhenDateIs_May032020TPDTAt2042_ShouldReturnTank() {
+        let timezone = TimeZone(abbreviation: "PDT") ?? TimeZone.current
+        let emblem = makeSUT(forDay: 3, andMonth: 5, andYear: 2020, andHour: 20 , andMinute: 42, andSeconds: 0, inTimezone: timezone )
+
+           XCTAssertEqual(emblem, Emblem.Tank)
+       }
+//
     func test_getDate_returnsDefaultMinDateSince1970() {
         let sut = makeSUT()
         let date = sut.getDefaultDate()
@@ -207,9 +213,9 @@ class EmblemDateCalculatorTests: XCTestCase {
         return EmblemDater()
     }
     
-    func makeSUT (forDay day:Int? = 18, andMonth month:Int? = 10, andYear year:Int? = 2019, andHour hour:Int? = 3, andMinute minute:Int? = 0) -> Emblem {
+    func makeSUT (forDay day:Int? = 18, andMonth month:Int? = 10, andYear year:Int? = 2019, andHour hour:Int? = 3, andMinute minute:Int? = 0, andSeconds seconds:Int? = 0, inTimezone timezone:TimeZone = TimeZone(abbreviation: "BOT") ?? TimeZone.current) -> Emblem {
         let sut = makeSUT()
-        let date = sut.getDate(forDay: day, andMonth: month, andYear: year, andHour: hour, andMinute: minute)
+        let date = sut.getDate(forDay: day, andMonth: month, andYear: year, andHour: hour, andMinute: minute, andSeconds: seconds, inTimezone: timezone)
         let emblem =  sut.getEmblem(forDate: date)
         return emblem
     }
