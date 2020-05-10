@@ -8,6 +8,13 @@ public class EmblemDater {
         return Date(timeIntervalSince1970: 0)
     }
     
+    public func getNextAvailableDate(for currentDate:Date, andEmblem emblem:Emblem) -> Date {
+        if(emblem == .Support) {
+           return getDate(forDay: 21, andMonth: 10, andYear: 2019 )
+        }
+        return getDate(forDay: 24, andMonth: 10, andYear: 2019 )
+    }
+    
     public func getDate(forDay day:Int? = 18, andMonth month:Int? = 10, andYear year:Int? = 2019, andHour hour:Int? = 3, andMinute minute:Int? = 0, andSeconds seconds:Int? = 0, inTimezone timezone:TimeZone = TimeZone(abbreviation: "BOT") ?? TimeZone.current) -> Date {
         var dateComponents = DateComponents()
                       dateComponents.day = day
