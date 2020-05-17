@@ -14,7 +14,13 @@ class NextEmblemDateCalculatorUseCase: XCTestCase {
         
         AssertThatForBaseDateThe(calculatedEmblem: .Marksman, expectedDay: 24, expectedMonth: 10, expectedYear: 2019)
            
-       }
+    }
+    
+    func test_WhenDateIsOct182019_WhenIsNextTankDate_ReturnsOct272019() {
+          
+          AssertThatForBaseDateThe(calculatedEmblem: .Tank, expectedDay: 27, expectedMonth: 10, expectedYear: 2019)
+             
+      }
     
     //MARK: -- Helpers
     
