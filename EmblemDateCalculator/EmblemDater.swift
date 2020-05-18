@@ -8,17 +8,21 @@ public class EmblemDater {
         return Date(timeIntervalSince1970: 0)
     }
     
+    public func Add(days:Int, toDate date:Date) -> Date {
+           let calendar = Calendar.current
+           return calendar.date(byAdding: .day, value: days, to: date) ?? getDefaultDate()
+    }
+    
     public func getNextAvailableDate(for emblem:Emblem, inCurrentDate date:Date) -> Date {
-        let calendar = Calendar.current
         
         if(emblem == .Support) {
-            return calendar.date(byAdding: .day, value: 3, to: date) ?? getDefaultDate()
+            return Add(days: 3, toDate: date)
         }
         if(emblem == .Marksman) {
-           return calendar.date(byAdding: .day, value: 6, to: date) ?? getDefaultDate()
+           return Add(days: 6, toDate: date)
         }
         if(emblem == .Tank) {
-           return calendar.date(byAdding: .day, value: 9, to: date) ?? getDefaultDate()
+           return Add(days: 9, toDate: date)
         }
         return getDefaultDate()
         
@@ -42,7 +46,6 @@ public class EmblemDater {
     
     fileprivate func calculateEmblem(_ baseDate: Date, _ date: Date?) -> Emblem {
         let emblems = Emblem.allCases
-        let calendar = Calendar.current
         var calculatedDate = baseDate
         
         var emblemIndex = 0
@@ -50,7 +53,7 @@ public class EmblemDater {
         
         if let date = date {
             while calculatedDate < date {
-                calculatedDate = calendar.date(byAdding: .day, value: 1, to: calculatedDate) ?? getDefaultDate()
+                calculatedDate = Add(days: 1, toDate: calculatedDate)
                 days += 1
                 if days != 0 && days % 3 == 0 {
                     emblemIndex = (emblemIndex + 1) % emblems.count
