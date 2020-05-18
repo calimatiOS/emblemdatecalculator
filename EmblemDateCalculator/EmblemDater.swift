@@ -15,7 +15,10 @@ public class EmblemDater {
         if(emblem == .Marksman) {
           return getDate(forDay: 24, andMonth: 10, andYear: 2019 )
         }
-        return getDate(forDay: 27, andMonth: 10, andYear: 2019 )
+        if(emblem == .Tank) {
+              return getDate(forDay: 27, andMonth: 10, andYear: 2019 )
+        }
+      return getDefaultDate()
     }
     
     public func getDate(forDay day:Int? = 18, andMonth month:Int? = 10, andYear year:Int? = 2019, andHour hour:Int? = 3, andMinute minute:Int? = 0, andSeconds seconds:Int? = 0, inTimezone timezone:TimeZone = TimeZone(abbreviation: "BOT") ?? TimeZone.current) -> Date {
