@@ -9,14 +9,16 @@ public class EmblemDater {
     }
     
     public func getNextAvailableDate(for emblem:Emblem, inCurrentDate date:Date) -> Date {
+        let calendar = Calendar.current
+        
         if(emblem == .Support) {
-           return getDate(forDay: 21, andMonth: 10, andYear: 2019 )
+            return calendar.date(byAdding: .day, value: 3, to: date) ?? getDefaultDate()
         }
         if(emblem == .Marksman) {
-          return getDate(forDay: 24, andMonth: 10, andYear: 2019 )
+           return calendar.date(byAdding: .day, value: 6, to: date) ?? getDefaultDate()
         }
         if(emblem == .Tank) {
-          return getDate(forDay: 27, andMonth: 10, andYear: 2019 )
+           return calendar.date(byAdding: .day, value: 9, to: date) ?? getDefaultDate()
         }
         return getDefaultDate()
         
