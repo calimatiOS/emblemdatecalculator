@@ -21,6 +21,12 @@ class NextEmblemDateCalculatorUseCase: XCTestCase {
              
       }
     
+    func test_WhenDateIsOct182019_WhenIsNextJungleDate_ReturnsOct302019() {
+             
+             AssertThatForBaseDateThe(calculatedEmblem: .Jungle, expectedDay: 30, expectedMonth: 10, expectedYear: 2019)
+                
+         }
+    
     //MARK: -- Helpers
     
     func AssertThatForBaseDateThe(calculatedEmblem emblem:Emblem, expectedDay:Int, expectedMonth:Int, expectedYear:Int) {

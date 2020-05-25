@@ -24,6 +24,9 @@ public class EmblemDater {
         if(emblem == .Tank) {
            return Add(days: 9, toDate: date)
         }
+        if(emblem == .Jungle) {
+            return Add(days: 12, toDate: date)
+        }
         return getDefaultDate()
         
     }
