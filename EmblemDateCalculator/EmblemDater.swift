@@ -1,6 +1,8 @@
 import Foundation
 
 public class EmblemDater {
+    
+    let emblems = Emblem.allCases
      
     public init() { }
     
@@ -14,9 +16,8 @@ public class EmblemDater {
     }
     
     public func getNextAvailableDate(for emblem:Emblem, inCurrentDate date:Date) -> Date {
-        let emblems = Emblem.allCases
-        let emblemIndex = emblems.firstIndex(of: emblem) ?? 0
         
+        let emblemIndex = emblems.firstIndex(of: emblem) ?? 0
         return Add(days: 3 * emblemIndex, toDate: date)
         
     }
@@ -38,7 +39,7 @@ public class EmblemDater {
     }
     
     fileprivate func calculateEmblem(_ baseDate: Date, _ date: Date?) -> Emblem {
-        let emblems = Emblem.allCases
+       
         var calculatedDate = baseDate
         
         var emblemIndex = 0

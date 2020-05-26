@@ -33,6 +33,12 @@ class NextEmblemDateCalculatorUseCase: XCTestCase {
                    
     }
     
+    func test_WhenDateIsOct182019_WhenIsNextMageDate_ReturnsNov052019() {
+                   
+           AssertThatForBaseDateThe(calculatedEmblem: .Mage, expectedDay: 5, expectedMonth: 11, expectedYear: 2019)
+                      
+       }
+    
     
     //MARK: -- Helpers
     
