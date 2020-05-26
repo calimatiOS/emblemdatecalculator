@@ -14,20 +14,10 @@ public class EmblemDater {
     }
     
     public func getNextAvailableDate(for emblem:Emblem, inCurrentDate date:Date) -> Date {
+        let emblems = Emblem.allCases
+        let emblemIndex = emblems.firstIndex(of: emblem) ?? 0
         
-        if(emblem == .Support) {
-            return Add(days: 3, toDate: date)
-        }
-        if(emblem == .Marksman) {
-           return Add(days: 6, toDate: date)
-        }
-        if(emblem == .Tank) {
-           return Add(days: 9, toDate: date)
-        }
-        if(emblem == .Jungle) {
-            return Add(days: 12, toDate: date)
-        }
-        return getDefaultDate()
+        return Add(days: 3 * emblemIndex, toDate: date)
         
     }
     
