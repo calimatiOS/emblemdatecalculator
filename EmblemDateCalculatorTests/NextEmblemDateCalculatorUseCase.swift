@@ -5,22 +5,16 @@ class NextEmblemDateCalculatorUseCase: XCTestCase {
     
     func test_WhenDateIsOct182019_WhenIsNextFighterDate_ReturnsNov082019() {
         
-        
         AssertFor(theCalculatedEmblemIs: .Fighter, inDay: 8, inMonth: 11, inYear: 2019)
-        
     }
     
     
     func test_WhenDateIsOct182019_WhenIsNextSupportDate_ReturnsOct212019() {
         
-        
         AssertFor(theCalculatedEmblemIs: .Support, inDay: 21, inMonth: 10, inYear: 2019)
-        
-        
     }
     
     func test_WhenDateIsOct182019_WhenIsNextMarksmanDate_ReturnsOct242019() {
-        
         
         AssertFor(theCalculatedEmblemIs: .Marksman, inDay: 24, inMonth: 10, inYear: 2019)
         
@@ -40,7 +34,6 @@ class NextEmblemDateCalculatorUseCase: XCTestCase {
     }
     
     func test_WhenDateIsOct182019_WhenIsNextAssasinDate_ReturnsNov022019() {
-        
         
         AssertFor(theCalculatedEmblemIs: .Assassin, inDay: 2, inMonth: 11, inYear: 2019)
         
