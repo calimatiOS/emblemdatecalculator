@@ -48,22 +48,6 @@ class NextEmblemDateCalculatorUseCase: XCTestCase {
     
     //MARK: -- Helpers
     
-    func AssertThatForBaseDateThe(calculatedEmblem emblem:Emblem, expectedDay:Int, expectedMonth:Int, expectedYear:Int) {
-        
-        //Arrange
-        let sut = EmblemDater()
-        let currentDate = sut.getDate()
-        let emblemToBeCalculated = emblem
-        let expectedDateEmblem = sut.getDate(forDay: expectedDay , andMonth: expectedMonth, andYear: expectedYear)
-        
-        //Act
-        let resultEmblemDate = sut.getNextAvailableDate(for: emblemToBeCalculated, inCurrentDate: currentDate)
-        
-        //Assert
-        XCTAssertEqual(expectedDateEmblem, resultEmblemDate)
-        
-    }
-    
     func AssertFor(currentDay day:Int? = 18, currentMonth month:Int? = 10, currentyear year:Int? = 2019,   theCalculatedEmblemIs emblem:Emblem, inDay expectedDay:Int,  inMonth expectedMonth:Int, inYear expectedYear:Int) {
         
         //Arrange
