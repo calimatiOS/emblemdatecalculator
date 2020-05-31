@@ -17,7 +17,10 @@ public class EmblemDater {
     
     public func getNextAvailableDate(for emblem:Emblem, inCurrentDate date:Date) -> Date {
         
-        let emblemIndex = emblems.firstIndex(of: emblem) ?? 0
+        var emblemIndex = emblems.firstIndex(of: emblem) ?? 0
+        if emblemIndex == 0 {
+            emblemIndex = 7
+        }
         return Add(days: 3 * emblemIndex, toDate: date)
         
     }

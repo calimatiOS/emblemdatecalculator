@@ -3,6 +3,13 @@ import EmblemDateCalculator
 
 class NextEmblemDateCalculatorUseCase: XCTestCase {
 
+    func test_WhenDateIsOct182019_WhenIsNextFighterDate_ReturnsNov082019() {
+           
+           AssertThatForBaseDateThe(calculatedEmblem: .Fighter, expectedDay: 8, expectedMonth: 11, expectedYear: 2019)
+           
+       }
+    
+    
     func test_WhenDateIsOct182019_WhenIsNextSupportDate_ReturnsOct212019() {
         
         AssertThatForBaseDateThe(calculatedEmblem: .Support, expectedDay: 21, expectedMonth: 10, expectedYear: 2019)
