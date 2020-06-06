@@ -9,6 +9,11 @@ class NextEmblemDateCalculatorUseCase: XCTestCase {
     }
     
     
+    func test_WhenDateIsOct192019_WhenIsNextFighterDate_ReturnsNov082019() {
+          
+        AssertFor(currentDay: 19, theCalculatedEmblemIs: .Fighter, inDay: 8, inMonth: 11, inYear: 2019)
+      }
+    
     func test_WhenDateIsOct182019_WhenIsNextSupportDate_ReturnsOct212019() {
         
         AssertFor(theCalculatedEmblemIs: .Support, inDay: 21, inMonth: 10, inYear: 2019)
@@ -48,7 +53,7 @@ class NextEmblemDateCalculatorUseCase: XCTestCase {
     
     //MARK: -- Helpers
     
-    func AssertFor(currentDay day:Int? = 18, currentMonth month:Int? = 10, currentyear year:Int? = 2019,   theCalculatedEmblemIs emblem:Emblem, inDay expectedDay:Int,  inMonth expectedMonth:Int, inYear expectedYear:Int) {
+    func AssertFor(currentDay day:Int? = 18, currentMonth month:Int? = 10, currentyear year:Int? = 2019,   theCalculatedEmblemIs emblem:Emblem, inDay expectedDay:Int,  inMonth expectedMonth:Int, inYear expectedYear:Int, file: StaticString = #file, line:UInt = #line) {
         
         //Arrange
         let sut = EmblemDater()
@@ -60,7 +65,7 @@ class NextEmblemDateCalculatorUseCase: XCTestCase {
         let resultEmblemDate = sut.getNextAvailableDate(for: emblemToBeCalculated, inCurrentDate: currentDate)
         
         //Assert
-        XCTAssertEqual(expectedDateEmblem, resultEmblemDate)
+        XCTAssertEqual(expectedDateEmblem, resultEmblemDate, file: file, line: line)
         
     }
     

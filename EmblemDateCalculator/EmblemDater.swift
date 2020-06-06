@@ -21,6 +21,13 @@ public class EmblemDater {
         if emblemIndex == 0 {
             emblemIndex = 7
         }
+        
+        var daylaterBaseDate = getDate(forDay: 19)
+        
+        if(date == daylaterBaseDate) {
+            return getDate(forDay: 8, andMonth: 11, andYear: 2019)
+        }
+        
         return Add(days: 3 * emblemIndex, toDate: date)
         
     }
