@@ -22,10 +22,10 @@ public class EmblemDater {
             emblemIndex = 7
         }
         
-        let daylaterBaseDate = getDate(forDay: 19)
+        let daylaterBaseDate = getDate(forDay: 19) //1 day later than base date
         
         if(date == daylaterBaseDate) {
-            return getDate(forDay: 8, andMonth: 11, andYear: 2019)
+            return Add(days: (3 * emblemIndex) - 1, toDate: date)
         }
         
         return Add(days: 3 * emblemIndex, toDate: date)
