@@ -22,7 +22,7 @@ public class EmblemDater {
             emblemIndex = 7
         }
         
-        var daylaterBaseDate = getDate(forDay: 19)
+        let daylaterBaseDate = getDate(forDay: 19)
         
         if(date == daylaterBaseDate) {
             return getDate(forDay: 8, andMonth: 11, andYear: 2019)
