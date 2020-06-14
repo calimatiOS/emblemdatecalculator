@@ -27,7 +27,7 @@ public class EmblemDater {
     
         let numberOfDays = calendar.dateComponents([.day], from: baseDate, to: date).day ?? 0
         
-        return Add(days: (3 * emblemIndex) - numberOfDays, toDate: date)
+        return Add(days: (3 * emblemIndex) - (numberOfDays % 21), toDate: date)
         
     }
     
