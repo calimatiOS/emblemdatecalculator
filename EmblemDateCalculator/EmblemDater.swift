@@ -22,18 +22,12 @@ public class EmblemDater {
             emblemIndex = 7
         }
         
-        let daylaterBaseDate = getDate(forDay: 19) //1 day later than base date
-        let twoDayslaterBaseDate = getDate(forDay: 20)
+        let calendar = Calendar.current
+        let baseDate = getDate()
+    
+        let numberOfDays = calendar.dateComponents([.day], from: baseDate, to: date).day ?? 0
         
-        if(date == daylaterBaseDate) {
-            return Add(days: (3 * emblemIndex) - 1, toDate: date)
-        }
-        
-        if(date == twoDayslaterBaseDate) {
-                   return Add(days: (3 * emblemIndex) - 2, toDate: date)
-        }
-        
-        return Add(days: 3 * emblemIndex, toDate: date)
+        return Add(days: (3 * emblemIndex) - numberOfDays, toDate: date)
         
     }
     
