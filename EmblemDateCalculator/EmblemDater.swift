@@ -27,13 +27,17 @@ public class EmblemDater {
         
         let numberOfDays = calendar.dateComponents([.day], from: baseDate, to: date).day ?? 0
         
-        if(emblem == .Support && numberOfDays > 0) {
-            return Add(days: 21 - (numberOfDays - 3), toDate: date)
+        if(numberOfDays > 0) {
+            if(emblem == .Support) {
+                return Add(days: 21 - (numberOfDays - 3), toDate: date)
+            }
+            
+            if(emblem == .Marksman) {
+                return Add(days: 21 - (numberOfDays - 3) + 3 , toDate: date)
+            }
         }
         
-        if(emblem == .Marksman && numberOfDays > 0) {
-            return Add(days: 21 - (numberOfDays - 3) + 3 , toDate: date)
-        }
+        
         
         
         return Add(days: (3 * emblemIndex) - (numberOfDays % 21), toDate: date)
