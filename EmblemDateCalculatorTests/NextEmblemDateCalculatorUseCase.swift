@@ -10,49 +10,59 @@ class NextEmblemDateCalculatorUseCase: XCTestCase {
     
     
     func test_WhenDateIsOct192019_WhenIsNextFighterDate_ReturnsNov082019() {
-          
+        
         AssertFor(currentDay: 19, theCalculatedEmblemIs: .Fighter, inDay: 8, inMonth: 11, inYear: 2019)
-      }
+    }
     
     func test_WhenDateIsOct202019_WhenIsNextFighterDate_ReturnsNov082019() {
-          
+        
         AssertFor(currentDay: 20, theCalculatedEmblemIs: .Fighter, inDay: 8, inMonth: 11, inYear: 2019)
-      }
+    }
     
     func test_WhenDateIsNov082019_WhenIsNextFighterDate_ReturnsNov292019() {
-            
-          AssertFor(currentDay: 8,currentMonth: 11 , theCalculatedEmblemIs: .Fighter, inDay: 29, inMonth: 11, inYear: 2019)
+        
+        AssertFor(currentDay: 8,currentMonth: 11 , theCalculatedEmblemIs: .Fighter, inDay: 29, inMonth: 11, inYear: 2019)
     }
     
     func test_WhenDateIsNov092019_WhenIsNextFighterDate_ReturnsNov292019() {
-             
-           AssertFor(currentDay: 9,currentMonth: 11 , theCalculatedEmblemIs: .Fighter, inDay: 29, inMonth: 11, inYear: 2019)
-     }
+        
+        AssertFor(currentDay: 9,currentMonth: 11 , theCalculatedEmblemIs: .Fighter, inDay: 29, inMonth: 11, inYear: 2019)
+    }
     
     func test_WhenDateIsNov292019_WhenIsNextFighterDate_ReturnsNov292019() {
-                
-              AssertFor(currentDay: 29,currentMonth: 11 , theCalculatedEmblemIs: .Fighter, inDay: 20, inMonth: 12, inYear: 2019)
+        
+        AssertFor(currentDay: 29,currentMonth: 11 , theCalculatedEmblemIs: .Fighter, inDay: 20, inMonth: 12, inYear: 2019)
     }
     
     func test_WhenDateIsDec012019_WhenIsNextFighterDate_ReturnsDec202019() {
-                   
-                 AssertFor(currentDay: 1,currentMonth: 12 , theCalculatedEmblemIs: .Fighter, inDay: 20, inMonth: 12, inYear: 2019)
-       }
+        
+        AssertFor(currentDay: 1,currentMonth: 12 , theCalculatedEmblemIs: .Fighter, inDay: 20, inMonth: 12, inYear: 2019)
+    }
     
     func test_WhenDateIsNov292019_WhenIsNextFighterDate_ReturnsDec202019() {
-                  
-                AssertFor(currentDay: 10,currentMonth: 11 , theCalculatedEmblemIs: .Fighter, inDay: 29, inMonth: 11, inYear: 2019)
-      }
+        
+        AssertFor(currentDay: 10,currentMonth: 11 , theCalculatedEmblemIs: .Fighter, inDay: 29, inMonth: 11, inYear: 2019)
+    }
     
     func test_WhenDateIsOct182019_WhenIsNextSupportDate_ReturnsOct212019() {
         
         AssertFor(theCalculatedEmblemIs: .Support, inDay: 21, inMonth: 10, inYear: 2019)
     }
     
-    func test_WhenDateIsOct212019_WhenIsNextSupportDate_ReturnsDec202019() {
-                     
-                   AssertFor(currentDay: 21, theCalculatedEmblemIs: .Support, inDay: 11, inMonth: 11, inYear: 2019)
-         }
+    func test_WhenDateIsOct212019_WhenIsNextSupportDate_ReturnsNov112019() {
+        
+        AssertFor(currentDay: 21, theCalculatedEmblemIs: .Support, inDay: 11, inMonth: 11, inYear: 2019)
+    }
+    
+    func test_WhenDateIsOct222019_WhenIsNextSupportDate_ReturnsNov112019() {
+        
+        AssertFor(currentDay: 22, theCalculatedEmblemIs: .Support, inDay: 11, inMonth: 11, inYear: 2019)
+    }
+    
+    func test_WhenDateIsOct232019_WhenIsNextSupportDate_ReturnsNov112019() {
+           
+           AssertFor(currentDay: 23, theCalculatedEmblemIs: .Support, inDay: 11, inMonth: 11, inYear: 2019)
+       }
     
     func test_WhenDateIsOct182019_WhenIsNextMarksmanDate_ReturnsOct242019() {
         
