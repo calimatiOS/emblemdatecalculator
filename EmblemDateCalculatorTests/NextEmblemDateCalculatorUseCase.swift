@@ -92,6 +92,22 @@ class NextEmblemDateCalculatorUseCase: XCTestCase {
         
     }
     
+    func test_WhenDateIsOct272019_WhenIsNextTankDate_ReturnsNov172019() {
+                
+                AssertFor(currentDay: 27, theCalculatedEmblemIs: .Tank, inDay: 17, inMonth: 11, inYear: 2019)
+       }
+    
+    func test_WhenDateIsOct282019_WhenIsNextTankDate_ReturnsNov172019() {
+                  
+                  AssertFor(currentDay: 28, theCalculatedEmblemIs: .Tank, inDay: 17, inMonth: 11, inYear: 2019)
+         }
+    
+    func test_WhenDateIsOct292019_WhenIsNextTankDate_ReturnsNov172019() {
+                    
+                    AssertFor(currentDay: 29, theCalculatedEmblemIs: .Tank, inDay: 17, inMonth: 11, inYear: 2019)
+           }
+      
+    
     func test_WhenDateIsOct182019_WhenIsNextJungleDate_ReturnsOct302019() {
         
         

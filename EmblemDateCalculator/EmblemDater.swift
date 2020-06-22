@@ -29,11 +29,15 @@ public class EmblemDater {
         
         if(numberOfDays > 0) {
             if(emblem == .Support) {
-                return Add(days: 21 - (numberOfDays - 3), toDate: date)
+                return Add(days: 21 - (numberOfDays - 3) + 3*0, toDate: date)
             }
             
             if(emblem == .Marksman) {
-                return Add(days: 21 - (numberOfDays - 3) + 3 , toDate: date)
+                return Add(days: 21 - (numberOfDays - 3) + 3*1 , toDate: date)
+            }
+            
+            if(emblem == .Tank) {
+                return Add(days: 21 - (numberOfDays - 3) + 3*2, toDate: date)
             }
         }
         
