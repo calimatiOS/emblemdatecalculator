@@ -3,7 +3,7 @@ import Foundation
 public class EmblemDater {
     
     let emblems = Emblem.allCases
-     
+    
     public init() { }
     
     public func getDefaultDate() ->Date {
@@ -11,8 +11,8 @@ public class EmblemDater {
     }
     
     public func Add(days:Int, toDate date:Date) -> Date {
-           let calendar = Calendar.current
-           return calendar.date(byAdding: .day, value: days, to: date) ?? getDefaultDate()
+        let calendar = Calendar.current
+        return calendar.date(byAdding: .day, value: days, to: date) ?? getDefaultDate()
     }
     
     public func getNextAvailableDate(for emblem:Emblem, inCurrentDate date:Date) -> Date {
@@ -24,12 +24,17 @@ public class EmblemDater {
         
         let calendar = Calendar.current
         let baseDate = getDate()
-    
+        
         let numberOfDays = calendar.dateComponents([.day], from: baseDate, to: date).day ?? 0
         
         if(emblem == .Support && numberOfDays > 0) {
             return Add(days: 21 - (numberOfDays - 3), toDate: date)
         }
+        
+        if(emblem == .Marksman && numberOfDays > 0) {
+            return Add(days: 21 - (numberOfDays - 3) + 3 , toDate: date)
+        }
+        
         
         return Add(days: (3 * emblemIndex) - (numberOfDays % 21), toDate: date)
         
@@ -37,22 +42,22 @@ public class EmblemDater {
     
     public func getDate(forDay day:Int? = 18, andMonth month:Int? = 10, andYear year:Int? = 2019, andHour hour:Int? = 3, andMinute minute:Int? = 0, andSeconds seconds:Int? = 0, inTimezone timezone:TimeZone = TimeZone(abbreviation: "BOT") ?? TimeZone.current) -> Date {
         var dateComponents = DateComponents()
-                      dateComponents.day = day
-                      dateComponents.month = month
-                      dateComponents.year = year
-                      dateComponents.hour = hour
-                      dateComponents.minute = minute
-                      dateComponents.second = seconds
-                      dateComponents.timeZone = timezone
-                      
-                      let calendar = Calendar.current
-                      let baseDate = calendar.date(from: dateComponents)
-      
+        dateComponents.day = day
+        dateComponents.month = month
+        dateComponents.year = year
+        dateComponents.hour = hour
+        dateComponents.minute = minute
+        dateComponents.second = seconds
+        dateComponents.timeZone = timezone
+        
+        let calendar = Calendar.current
+        let baseDate = calendar.date(from: dateComponents)
+        
         return baseDate ?? getDefaultDate()
     }
     
     fileprivate func calculateEmblem(_ baseDate: Date, _ date: Date?) -> Emblem {
-       
+        
         var calculatedDate = baseDate
         
         var emblemIndex = 0
@@ -65,7 +70,7 @@ public class EmblemDater {
                 if days != 0 && days % 3 == 0 {
                     emblemIndex = (emblemIndex + 1) % emblems.count
                 }
-            
+                
             }
             return emblems[emblemIndex]
         }
