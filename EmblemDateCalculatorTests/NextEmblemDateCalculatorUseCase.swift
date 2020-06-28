@@ -75,6 +75,7 @@ class NextEmblemDateCalculatorUseCase: XCTestCase {
              
              AssertFor(currentDay: 24, theCalculatedEmblemIs: .Marksman, inDay: 14, inMonth: 11, inYear: 2019)
     }
+
     
     func test_WhenDateIsOct252019_WhenIsNextMarksmanDate_ReturnsNov142019() {
              
@@ -115,17 +116,66 @@ class NextEmblemDateCalculatorUseCase: XCTestCase {
         
     }
     
+    func test_WhenDateIsOct302019_WhenIsNextJungleDate_ReturnsNov202019() {
+                    
+                    AssertFor(currentDay: 30, theCalculatedEmblemIs: .Jungle, inDay: 20, inMonth: 11, inYear: 2019)
+           }
+    
+    func test_WhenDateIsOct312019_WhenIsNextJungleDate_ReturnsNov202019() {
+                      
+                      AssertFor(currentDay: 31, theCalculatedEmblemIs: .Jungle, inDay: 20, inMonth: 11, inYear: 2019)
+             }
+    
+    
+    func test_WhenDateIsNov012019_WhenIsNextJungleDate_ReturnsNov202019() {
+                      
+                      AssertFor(currentDay: 1, currentMonth: 11, theCalculatedEmblemIs: .Jungle, inDay: 20, inMonth: 11, inYear: 2019)
+             }
+    
+    
+    
     func test_WhenDateIsOct182019_WhenIsNextAssasinDate_ReturnsNov022019() {
         
         AssertFor(theCalculatedEmblemIs: .Assassin, inDay: 2, inMonth: 11, inYear: 2019)
         
     }
     
+    func test_WhenDateIsNov022019_WhenIsNextAssasinDate_ReturnsNov232019() {
+                      
+        AssertFor(currentDay: 2, currentMonth: 11, theCalculatedEmblemIs: .Assassin, inDay: 23, inMonth: 11, inYear: 2019)
+    }
+    
+    func test_WhenDateIsNov032019_WhenIsNextAssasinDate_ReturnsNov232019() {
+                        
+          AssertFor(currentDay: 3, currentMonth: 11, theCalculatedEmblemIs: .Assassin, inDay: 23, inMonth: 11, inYear: 2019)
+      }
+    
+    func test_WhenDateIsNov042019_WhenIsNextAssasinDate_ReturnsNov232019() {
+                         
+           AssertFor(currentDay: 4, currentMonth: 11, theCalculatedEmblemIs: .Assassin, inDay: 23, inMonth: 11, inYear: 2019)
+       }
+    
+    
     func test_WhenDateIsOct182019_WhenIsNextMageDate_ReturnsNov052019() {
         
         AssertFor(theCalculatedEmblemIs: .Mage, inDay: 5, inMonth: 11, inYear: 2019)
         
     }
+    
+    func test_WhenDateIsNov052019_WhenIsNextAssasinDate_ReturnsNov232019() {
+                            
+              AssertFor(currentDay: 5, currentMonth: 11, theCalculatedEmblemIs: .Mage, inDay: 26, inMonth: 11, inYear: 2019)
+    }
+    
+    func test_WhenDateIsNov062019_WhenIsNextAssasinDate_ReturnsNov232019() {
+                               
+                 AssertFor(currentDay: 6, currentMonth: 11, theCalculatedEmblemIs: .Mage, inDay: 26, inMonth: 11, inYear: 2019)
+       }
+    
+    func test_WhenDateIsNov072019_WhenIsNextAssasinDate_ReturnsNov232019() {
+                                  
+                    AssertFor(currentDay: 7, currentMonth: 11, theCalculatedEmblemIs: .Mage, inDay: 26, inMonth: 11, inYear: 2019)
+          }
     
     
     //MARK: -- Helpers
