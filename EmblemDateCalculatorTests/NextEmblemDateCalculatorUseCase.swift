@@ -272,6 +272,10 @@ class NextEmblemDateCalculatorUseCase: XCTestCase {
         AssertFor(currentDay: 28, currentMonth: 11, theCalculatedEmblemIs: .Mage, inDay: 17, inMonth: 12, inYear: 2019)
     }
     
+    func test_WhenDateIsJuly052020_WhenIsNextFighterDate_ReturnsJuly172020() {
+           
+           AssertFor(currentDay: 5, currentMonth: 7, currentyear: 2020, theCalculatedEmblemIs: .Fighter, inDay: 17, inMonth: 7, inYear: 2020)
+       }
     
     //MARK: -- Helpers
     
