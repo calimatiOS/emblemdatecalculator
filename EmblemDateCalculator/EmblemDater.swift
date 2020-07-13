@@ -12,7 +12,16 @@ public class EmblemDater {
     
     public func Add(days:Int, toDate date:Date) -> Date {
         let calendar = Calendar.current
-        return calendar.date(byAdding: .day, value: days, to: date) ?? getDefaultDate()
+        let dateWithNoTime = calendar.date(byAdding: .day, value: days, to: date)
+        
+        if let dateWithNoTime = dateWithNoTime {
+            let dateWithTime = calendar.date(bySettingHour: 3, minute: 0, second: 0, of: dateWithNoTime)
+                  if let dateWithTime = dateWithTime {
+                      return dateWithTime
+                  }
+        }
+        
+        return getDefaultDate()
     }
     
     public func getNextAvailableDate(for emblem:Emblem, inCurrentDate date:Date) -> Date {

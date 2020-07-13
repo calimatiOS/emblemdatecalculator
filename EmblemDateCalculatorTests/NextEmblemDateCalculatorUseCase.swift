@@ -277,13 +277,18 @@ class NextEmblemDateCalculatorUseCase: XCTestCase {
            AssertFor(currentDay: 5, currentMonth: 7, currentyear: 2020, theCalculatedEmblemIs: .Fighter, inDay: 17, inMonth: 7, inYear: 2020)
        }
     
+    func test_WhenDateIsJuly052020At18h36Min02seconds_WhenIsNextFighterDate_ReturnsJuly172020() {
+
+              AssertFor(currentDay: 5, currentMonth: 7, currentyear: 2020, currentHour: 18, currentMinute: 36, currentSecond: 2, theCalculatedEmblemIs: .Fighter, inDay: 17, inMonth: 7, inYear: 2020)
+          }
+    
     //MARK: -- Helpers
     
-    func AssertFor(currentDay day:Int? = 18, currentMonth month:Int? = 10, currentyear year:Int? = 2019,   theCalculatedEmblemIs emblem:Emblem, inDay expectedDay:Int,  inMonth expectedMonth:Int, inYear expectedYear:Int, file: StaticString = #file, line:UInt = #line) {
+    func AssertFor(currentDay day:Int? = 18, currentMonth month:Int? = 10, currentyear year:Int? = 2019, currentHour hour:Int? = 3, currentMinute minute:Int? = 0, currentSecond second:Int? = 0,  theCalculatedEmblemIs emblem:Emblem, inDay expectedDay:Int,  inMonth expectedMonth:Int, inYear expectedYear:Int, file: StaticString = #file, line:UInt = #line) {
         
         //Arrange
         let sut = EmblemDater()
-        let currentDate = sut.getDate(forDay: day, andMonth: month, andYear: year)
+        let currentDate = sut.getDate(forDay: day, andMonth: month, andYear: year, andHour: hour, andMinute: minute, andSeconds: second)
         let emblemToBeCalculated = emblem
         let expectedDateEmblem = sut.getDate(forDay: expectedDay , andMonth: expectedMonth, andYear: expectedYear)
         
