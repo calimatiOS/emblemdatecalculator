@@ -54,7 +54,7 @@ public class EmblemDater {
         let numberOfDays = calendar.dateComponents([.day], from: baseDate, to: date).day ?? 0
         
         
-        return calculateDateWithTime(numberOfDays: numberOfDays, emblem: emblem, emblemIndex: emblemIndex, date: date, calendar: Calendar.current)
+        return calculateDateWithTime(numberOfDays: numberOfDays, emblem: emblem, emblemIndex: emblemIndex, date: date, calendar: calendar)
         
     }
     
