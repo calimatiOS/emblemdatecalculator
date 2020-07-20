@@ -14,13 +14,30 @@ public class EmblemDater {
         let calendar = Calendar.current
         let dateWithNoTime = calendar.date(byAdding: .day, value: days, to: date)
         
-        if let dateWithNoTime = dateWithNoTime {
-            let dateWithTime = calendar.date(bySettingHour: 3, minute: 0, second: 0, of: dateWithNoTime)
-                  if let dateWithTime = dateWithTime {
-                      return dateWithTime
-                  }
-        }
+        return dateWithNoTime ?? getDefaultDate()
+    }
+    
+    public func calculateDateWithTime(numberOfDays:Int, emblem:Emblem, emblemIndex:Int, date:Date, calendar:Calendar) -> Date {
+        if(numberOfDays > 0 && emblem != .Fighter) {
+                       let dateWithNoTime = Add(days: 21 - ((numberOfDays % 21) - 3) + 3 * (emblemIndex - 1), toDate: date)
+                      let dateWithTime = SetTime(hour: 3, minute: 0, second: 0, forDate: dateWithNoTime, in: calendar)
+                    return dateWithTime
+               }
         
+        let dateWithNoTime = Add(days: (3 * emblemIndex) - (numberOfDays % 21), toDate: date)
+        let dateWithTime = SetTime(hour: 3, minute: 0, second: 0, forDate: dateWithNoTime, in: calendar)
+               return dateWithTime
+    }
+
+    
+    public func SetTime(hour:Int, minute:Int, second:Int, forDate dateWithNoTime:Date?, in calendar:Calendar) -> Date {
+        
+        if let dateWithNoTime = dateWithNoTime {
+                  let dateWithTime = calendar.date(bySettingHour: hour, minute: minute, second: second, of: dateWithNoTime)
+                        if let dateWithTime = dateWithTime {
+                            return dateWithTime
+                        }
+              }
         return getDefaultDate()
     }
     
@@ -36,11 +53,8 @@ public class EmblemDater {
         
         let numberOfDays = calendar.dateComponents([.day], from: baseDate, to: date).day ?? 0
         
-        if(numberOfDays > 0 && emblem != .Fighter) {
-                return Add(days: 21 - ((numberOfDays % 21) - 3) + 3 * (emblemIndex - 1), toDate: date)
-        }
         
-        return Add(days: (3 * emblemIndex) - (numberOfDays % 21), toDate: date)
+        return calculateDateWithTime(numberOfDays: numberOfDays, emblem: emblem, emblemIndex: emblemIndex, date: date, calendar: Calendar.current)
         
     }
     
