@@ -3,6 +3,16 @@ import Foundation
 public class EmblemDater {
     
     let emblems = Emblem.allCases
+    let startNumberOfDays = 0
+         let nextEmblemPeriodInDays = 3
+         let startingHour = 3
+         let startingMinute = 0
+         let startingSecond = 0
+    
+    var sameEmblemPeriodInDays: Int {
+        return emblems.count * nextEmblemPeriodInDays
+    }
+    
     
     public init() { }
     
@@ -18,14 +28,14 @@ public class EmblemDater {
     }
     
     public func calculateDateWithTime(numberOfDays:Int, emblem:Emblem, emblemIndex:Int, date:Date, calendar:Calendar) -> Date {
-        if(numberOfDays > 0 && emblem != .Fighter) {
-                       let dateWithNoTime = Add(days: 21 - ((numberOfDays % 21) - 3) + 3 * (emblemIndex - 1), toDate: date)
-                      let dateWithTime = SetTime(hour: 3, minute: 0, second: 0, forDate: dateWithNoTime, in: calendar)
+        if(numberOfDays > startNumberOfDays && emblem != .Fighter) {
+                       let dateWithNoTime = Add(days: sameEmblemPeriodInDays - ((numberOfDays % sameEmblemPeriodInDays) - nextEmblemPeriodInDays) + nextEmblemPeriodInDays * (emblemIndex - 1), toDate: date)
+                      let dateWithTime = SetTime(hour: startingHour, minute: startingMinute, second: startingSecond, forDate: dateWithNoTime, in: calendar)
                     return dateWithTime
                }
         
-        let dateWithNoTime = Add(days: (3 * emblemIndex) - (numberOfDays % 21), toDate: date)
-        let dateWithTime = SetTime(hour: 3, minute: 0, second: 0, forDate: dateWithNoTime, in: calendar)
+        let dateWithNoTime = Add(days: (nextEmblemPeriodInDays * emblemIndex) - (numberOfDays % sameEmblemPeriodInDays), toDate: date)
+        let dateWithTime = SetTime(hour: startingHour, minute: startingMinute, second: startingSecond, forDate: dateWithNoTime, in: calendar)
                return dateWithTime
     }
 
