@@ -55,7 +55,7 @@ public class EmblemDater {
         
         var emblemIndex = emblems.firstIndex(of: emblem) ?? 0
         if emblemIndex == 0 {
-            emblemIndex = 7
+            emblemIndex = emblems.count
         }
         
         let calendar = Calendar.current
