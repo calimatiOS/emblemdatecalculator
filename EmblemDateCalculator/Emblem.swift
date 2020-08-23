@@ -1,6 +1,6 @@
 import Foundation
 
-public enum Emblem : CaseIterable {
+public enum Emblem : String, CaseIterable {
     case Fighter
     case Support
     case Marksman
