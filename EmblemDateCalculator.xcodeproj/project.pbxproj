@@ -12,6 +12,7 @@
 		F65E9E4723FA47CA00D476BA /* EmblemDateCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65E9E4623FA47CA00D476BA /* EmblemDateCalculatorTests.swift */; };
 		F65E9E4923FA47CA00D476BA /* EmblemDateCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = F65E9E3B23FA47CA00D476BA /* EmblemDateCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F6C19A3A25058E0000980349 /* EmblemDateFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C19A3925058E0000980349 /* EmblemDateFormatterTests.swift */; };
+		F6C19A3C2505926D00980349 /* EmblemDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C19A3B2505926D00980349 /* EmblemDateFormatter.swift */; };
 		F6E12EE32468C7BA00BB2129 /* NextEmblemDateCalculatorUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E12EE22468C7BA00BB2129 /* NextEmblemDateCalculatorUseCase.swift */; };
 		F6F0525E240C81EC001EDC0D /* EmblemDater.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F0525D240C81EC001EDC0D /* EmblemDater.swift */; };
 /* End PBXBuildFile section */
@@ -35,6 +36,7 @@
 		F65E9E4623FA47CA00D476BA /* EmblemDateCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmblemDateCalculatorTests.swift; sourceTree = "<group>"; };
 		F65E9E4823FA47CA00D476BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6C19A3925058E0000980349 /* EmblemDateFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmblemDateFormatterTests.swift; sourceTree = "<group>"; };
+		F6C19A3B2505926D00980349 /* EmblemDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmblemDateFormatter.swift; sourceTree = "<group>"; };
 		F6E12EE22468C7BA00BB2129 /* NextEmblemDateCalculatorUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextEmblemDateCalculatorUseCase.swift; sourceTree = "<group>"; };
 		F6F0525D240C81EC001EDC0D /* EmblemDater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmblemDater.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +85,7 @@
 				F65E9E3C23FA47CA00D476BA /* Info.plist */,
 				F6F0525D240C81EC001EDC0D /* EmblemDater.swift */,
 				F632C16A24318A8B00847710 /* Emblem.swift */,
+				F6C19A3B2505926D00980349 /* EmblemDateFormatter.swift */,
 			);
 			path = EmblemDateCalculator;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			files = (
 				F6F0525E240C81EC001EDC0D /* EmblemDater.swift in Sources */,
 				F632C16B24318A8B00847710 /* Emblem.swift in Sources */,
+				F6C19A3C2505926D00980349 /* EmblemDateFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
