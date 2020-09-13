@@ -9,7 +9,7 @@ class EmblemDateFormatterTests: XCTestCase {
         
         let friendlyDate = sut.getFriendlyDate(today)
         
-        XCTAssertEqual(friendlyDate, "Sunday, September 6, 2020")
+        XCTAssertEqual(friendlyDate, "Sunday, September 6, 2020 at 3:00 AM")
         
     }
 
