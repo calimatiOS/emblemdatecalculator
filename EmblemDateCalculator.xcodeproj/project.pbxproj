@@ -11,6 +11,8 @@
 		F65E9E4223FA47CA00D476BA /* EmblemDateCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65E9E3823FA47CA00D476BA /* EmblemDateCalculator.framework */; };
 		F65E9E4723FA47CA00D476BA /* EmblemDateCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65E9E4623FA47CA00D476BA /* EmblemDateCalculatorTests.swift */; };
 		F65E9E4923FA47CA00D476BA /* EmblemDateCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = F65E9E3B23FA47CA00D476BA /* EmblemDateCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F692DDA825181EA400E7D2C6 /* DaterFormatterIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F692DDA725181EA400E7D2C6 /* DaterFormatterIntegrationTests.swift */; };
+		F692DDAA25181EA400E7D2C6 /* EmblemDateCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65E9E3823FA47CA00D476BA /* EmblemDateCalculator.framework */; };
 		F6C19A3A25058E0000980349 /* EmblemDateFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C19A3925058E0000980349 /* EmblemDateFormatterTests.swift */; };
 		F6C19A3C2505926D00980349 /* EmblemDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C19A3B2505926D00980349 /* EmblemDateFormatter.swift */; };
 		F6E12EE32468C7BA00BB2129 /* NextEmblemDateCalculatorUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E12EE22468C7BA00BB2129 /* NextEmblemDateCalculatorUseCase.swift */; };
@@ -19,6 +21,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		F65E9E4323FA47CA00D476BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F65E9E2F23FA47CA00D476BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F65E9E3723FA47CA00D476BA;
+			remoteInfo = EmblemDateCalculator;
+		};
+		F692DDAB25181EA400E7D2C6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F65E9E2F23FA47CA00D476BA /* Project object */;
 			proxyType = 1;
@@ -35,6 +44,9 @@
 		F65E9E4123FA47CA00D476BA /* EmblemDateCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmblemDateCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F65E9E4623FA47CA00D476BA /* EmblemDateCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmblemDateCalculatorTests.swift; sourceTree = "<group>"; };
 		F65E9E4823FA47CA00D476BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F692DDA525181EA400E7D2C6 /* DaterFormatterIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DaterFormatterIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F692DDA725181EA400E7D2C6 /* DaterFormatterIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaterFormatterIntegrationTests.swift; sourceTree = "<group>"; };
+		F692DDA925181EA400E7D2C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6C19A3925058E0000980349 /* EmblemDateFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmblemDateFormatterTests.swift; sourceTree = "<group>"; };
 		F6C19A3B2505926D00980349 /* EmblemDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmblemDateFormatter.swift; sourceTree = "<group>"; };
 		F6E12EE22468C7BA00BB2129 /* NextEmblemDateCalculatorUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextEmblemDateCalculatorUseCase.swift; sourceTree = "<group>"; };
@@ -57,6 +69,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F692DDA225181EA400E7D2C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F692DDAA25181EA400E7D2C6 /* EmblemDateCalculator.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -65,6 +85,7 @@
 			children = (
 				F65E9E3A23FA47CA00D476BA /* EmblemDateCalculator */,
 				F65E9E4523FA47CA00D476BA /* EmblemDateCalculatorTests */,
+				F692DDA625181EA400E7D2C6 /* DaterFormatterIntegrationTests */,
 				F65E9E3923FA47CA00D476BA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,6 +95,7 @@
 			children = (
 				F65E9E3823FA47CA00D476BA /* EmblemDateCalculator.framework */,
 				F65E9E4123FA47CA00D476BA /* EmblemDateCalculatorTests.xctest */,
+				F692DDA525181EA400E7D2C6 /* DaterFormatterIntegrationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,6 +121,15 @@
 				F6C19A3925058E0000980349 /* EmblemDateFormatterTests.swift */,
 			);
 			path = EmblemDateCalculatorTests;
+			sourceTree = "<group>";
+		};
+		F692DDA625181EA400E7D2C6 /* DaterFormatterIntegrationTests */ = {
+			isa = PBXGroup;
+			children = (
+				F692DDA725181EA400E7D2C6 /* DaterFormatterIntegrationTests.swift */,
+				F692DDA925181EA400E7D2C6 /* Info.plist */,
+			);
+			path = DaterFormatterIntegrationTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,13 +182,31 @@
 			productReference = F65E9E4123FA47CA00D476BA /* EmblemDateCalculatorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		F692DDA425181EA400E7D2C6 /* DaterFormatterIntegrationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F692DDAF25181EA400E7D2C6 /* Build configuration list for PBXNativeTarget "DaterFormatterIntegrationTests" */;
+			buildPhases = (
+				F692DDA125181EA400E7D2C6 /* Sources */,
+				F692DDA225181EA400E7D2C6 /* Frameworks */,
+				F692DDA325181EA400E7D2C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F692DDAC25181EA400E7D2C6 /* PBXTargetDependency */,
+			);
+			name = DaterFormatterIntegrationTests;
+			productName = DaterFormatterIntegrationTests;
+			productReference = F692DDA525181EA400E7D2C6 /* DaterFormatterIntegrationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		F65E9E2F23FA47CA00D476BA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Ricardo Herrera Petit";
 				TargetAttributes = {
@@ -167,6 +216,9 @@
 					};
 					F65E9E4023FA47CA00D476BA = {
 						CreatedOnToolsVersion = 11.3.1;
+					};
+					F692DDA425181EA400E7D2C6 = {
+						CreatedOnToolsVersion = 12.0;
 					};
 				};
 			};
@@ -185,6 +237,7 @@
 			targets = (
 				F65E9E3723FA47CA00D476BA /* EmblemDateCalculator */,
 				F65E9E4023FA47CA00D476BA /* EmblemDateCalculatorTests */,
+				F692DDA425181EA400E7D2C6 /* DaterFormatterIntegrationTests */,
 			);
 		};
 /* End PBXProject section */
@@ -198,6 +251,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F65E9E3F23FA47CA00D476BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F692DDA325181EA400E7D2C6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -227,6 +287,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F692DDA125181EA400E7D2C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F692DDA825181EA400E7D2C6 /* DaterFormatterIntegrationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -234,6 +302,11 @@
 			isa = PBXTargetDependency;
 			target = F65E9E3723FA47CA00D476BA /* EmblemDateCalculator */;
 			targetProxy = F65E9E4323FA47CA00D476BA /* PBXContainerItemProxy */;
+		};
+		F692DDAC25181EA400E7D2C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F65E9E3723FA47CA00D476BA /* EmblemDateCalculator */;
+			targetProxy = F692DDAB25181EA400E7D2C6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -452,6 +525,42 @@
 			};
 			name = Release;
 		};
+		F692DDAD25181EA400E7D2C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = AMLYNCKP6M;
+				INFOPLIST_FILE = DaterFormatterIntegrationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.petitcoding.DaterFormatterIntegrationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F692DDAE25181EA400E7D2C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = AMLYNCKP6M;
+				INFOPLIST_FILE = DaterFormatterIntegrationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.petitcoding.DaterFormatterIntegrationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -478,6 +587,15 @@
 			buildConfigurations = (
 				F65E9E5023FA47CA00D476BA /* Debug */,
 				F65E9E5123FA47CA00D476BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F692DDAF25181EA400E7D2C6 /* Build configuration list for PBXNativeTarget "DaterFormatterIntegrationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F692DDAD25181EA400E7D2C6 /* Debug */,
+				F692DDAE25181EA400E7D2C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
