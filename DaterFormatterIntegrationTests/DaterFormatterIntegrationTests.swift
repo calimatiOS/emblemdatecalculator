@@ -32,6 +32,16 @@ class DaterFormatterIntegrationTests: XCTestCase {
         XCTAssertEqual(friendlyDate, "Sunday, October 27, 2019 at 3:00 AM")
     }
     
+    func test_getFriendlyDateForJungleEmblem_WhenDateIsOct182019At3h00m_ThenShouldReturnOct302019FriendlyString() {
+        
+        let sut = EmblemDater()
+        let emblemFormatter = EmblemDateFormatter()
+        let currentDate = Date(timeIntervalSince1970: 1571385600)
+        let supportEmblemDate = sut.getNextAvailableDate(for: .Jungle, inCurrentDate: currentDate)
+        let friendlyDate = emblemFormatter.getFriendlyDate(supportEmblemDate)
+        XCTAssertEqual(friendlyDate, "Wednesday, October 30, 2019 at 3:00 AM")
+    }
+    
     
 
 }
