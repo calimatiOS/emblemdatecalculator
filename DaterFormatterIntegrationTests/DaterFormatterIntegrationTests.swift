@@ -34,6 +34,13 @@ class DaterFormatterIntegrationTests: XCTestCase {
         AssertFriendlyDateIs("Saturday, November 2, 2019 at 3:00 AM", for: .Assassin)
     }
     
+    func test_getFriendlyDateForMageEmblem_WhenDateIsOct182019At3h00m_ThenShouldReturnNov052019FriendlyString() {
+        
+        AssertFriendlyDateIs("Tuesday, November 5, 2019 at 3:00 AM", for: .Mage)
+    }
+    
+    
+    
     //Mark: Helper Methods
     
     fileprivate func AssertFriendlyDateIs(_ expectedDateString: String, for emblem:Emblem) {
