@@ -1,6 +1,10 @@
 import Foundation
 
-public class EmblemDater {
+public protocol Dater {
+    func getNextAvailableDate(for emblem:Emblem, inCurrentDate date:Date) -> Date
+}
+
+public class EmblemDater: Dater {
     
     let emblems = Emblem.allCases
     let startNumberOfDays = 0
