@@ -1,6 +1,10 @@
 import Foundation
 
-public class EmblemDateFormatter {
+public protocol EmblemFormatter {
+    func getFriendlyDate(_ date:Date) -> String
+}
+
+public class EmblemDateFormatter: EmblemFormatter {
     public init() { }
      public func getFriendlyDate(_ date:Date) -> String {
         let dateFormatter = DateFormatter()
